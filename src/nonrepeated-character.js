@@ -6,7 +6,14 @@ EX: "XXXXX" --> "sorry"
 EX: "ALABAMA" --> "L"
 EX: "BABA" --> "sorry"
 */
-
+function firstNonRepeatedCharacter(string){
+ let result = Array.from(string) ;
+var letterFilter = result.filter(function(char){
+	return result.indexOf(char) === result.lastIndexOf(char);
+}); return letterFilter[0];
+  
+};
+/*
 function firstNonRepeatedCharacter(string) {
    let firstSingle = string.split('').filter(function(char) {
        return string.indexOf(char) === string.lastIndexOf(char);
@@ -14,5 +21,5 @@ function firstNonRepeatedCharacter(string) {
 
   return !!firstSingle ? firstSingle : 'sorry'
 }
-
+*/
 module.exports = firstNonRepeatedCharacter;

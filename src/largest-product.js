@@ -11,7 +11,13 @@ function largestProductFromThree(arr) {
 */
 
 function largestProductFromThree(arr) {
-   arr.sort((a, b) => b - a).pop();
+const reverse = arr.sort(function(a,b){
+  return b-a;
+});
 
-return arr.reduce((a, b) => a * b);
-}
+for(i=0; i<= reverse.length; i++){
+  
+return reverse.slice(0, 3).reduce((a, b) => a * b);
+}  
+
+}console.log(largestProductFromThree([2, 1, 3, 7]))
